@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <h1><a class="navbar-brand charshyia-logo" href="#">ЧА<span class="logo-red">РШ</span><span class="logo-green">ИЯ</span></a></h1>
+            <h1><a asp-controller="Home" asp-action="Index" class="navbar-brand charshyia-logo">ЧА<span class="logo-red">РШ</span><span class="logo-green">ИЯ</span></a></h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Влез в твоята чаршия<span class="sr-only">(current)</span></a>
+                        <a asp-controller="Account" asp-action="Register" class="nav-link">Влез в твоята чаршия<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Направи си чаршия</a>

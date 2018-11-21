@@ -1,7 +1,25 @@
-﻿
+﻿@model Charshiya.Models.Account.RegisterUserInputModel
+
 @{
     ViewData["Title"] = "Register";
 }
-
-<h2>Register</h2>
-
+<h1>Регистрирай се и си отвори чаршия</h1>
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" placeholder="Username ...">
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" placeholder="Password ...">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password ...">
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>

@@ -1,4 +1,5 @@
 ﻿using Charshiya.Data.DbModels;
+using Charshiya.Models.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,12 @@ namespace Charshiya.Controllers
         }
 
         public IActionResult Register()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult Register(RegisterUserInputModel registerModel)
         {
             return this.View();
         }

@@ -3,6 +3,7 @@ using Charshiya.Data.DbModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -33,7 +34,7 @@ namespace Charshiya
                 options.UseSqlServer(
                     this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<CharshiyaUser>(options =>
+            services.AddIdentity<CharshiyaUser, IdentityRole>(options =>
            {
                options.SignIn.RequireConfirmedEmail = false;
                options.Password.RequireLowercase = false;
@@ -43,6 +44,7 @@ namespace Charshiya
                options.Password.RequiredUniqueChars = 0;
                options.Password.RequiredLength = 3;
            })
+           .AddDefaultTokenProviders()
             .AddEntityFrameworkStores<CharshyiaDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
